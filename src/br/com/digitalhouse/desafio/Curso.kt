@@ -1,6 +1,13 @@
 package br.com.digitalhouse.desafio
 
-class Curso(val codigo: Int, var nome: String) {
+class Curso(
+    val codigo: Int,
+    var nome: String,
+    var professorTitular: ProfessorTitular,
+    var professorAdjunto: ProfessorAdjunto,
+    var quantidadeMaximaDeAlunos: Int,
+    val alunos: MutableSet<Aluno>
+) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -17,4 +24,7 @@ class Curso(val codigo: Int, var nome: String) {
         return "Curso (codigo=$codigo, nome='$nome')"
     }
 
+    fun teste() {
+
+    }
 }
