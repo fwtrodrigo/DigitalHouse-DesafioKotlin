@@ -4,9 +4,8 @@ abstract class Professor(val codigo: Int, var nome: String, var sobrenome: Strin
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
 
-        return other is Professor && other.codigo == codigo
+        return other == codigo
     }
 
     override fun hashCode(): Int {
