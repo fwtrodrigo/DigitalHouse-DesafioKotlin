@@ -4,7 +4,7 @@ class Aluno(val codigo: Int, var nome: String, var sobrenome: String) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
+        if (other == codigo) return true
 
         return other is Aluno && other.codigo == codigo
     }

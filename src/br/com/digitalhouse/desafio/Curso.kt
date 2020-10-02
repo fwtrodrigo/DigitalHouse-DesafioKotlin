@@ -1,16 +1,13 @@
 package br.com.digitalhouse.desafio
 
-class Curso(val codigo: Int, var nome: String, var quantidadeMaximaDeAlunos: Int, ) {
+class Curso(val codigo: Int, var nome: String, var quantidadeMaximaDeAlunos: Int) {
 
     lateinit var professorTitular: ProfessorTitular
     lateinit var professorAdjunto: ProfessorAdjunto
     val alunos = mutableSetOf<Aluno>()
 
     override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        return other is Curso && other.codigo == codigo
+        return other == codigo
     }
 
     override fun hashCode(): Int {
