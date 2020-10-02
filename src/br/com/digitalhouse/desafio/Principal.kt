@@ -26,7 +26,13 @@ fun main() {
 
     dh.matricularAluno(10, 20001)
     dh.matricularAluno(20, 20001)
+    dh.matricularAluno(20, 20001)
+
+    println("")
     dh.matricularAluno(30, 20002)
     dh.matricularAluno(40, 20002)
     dh.matricularAluno(50, 20002)
+    println("")
+
+
 }

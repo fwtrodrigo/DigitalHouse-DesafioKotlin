@@ -10,8 +10,15 @@ class DigitalHouseManager {
         cursos.add(Curso(codigoCurso, nome, quantidadeMaximaDeAlunos))
     }
 
-    fun excluirCurso(codigoCurso: Int) {
-        cursos.remove(codigoCurso)
+    fun excluirCurso(codigoCurso: Int): Boolean {
+        val curso = cursos.firstOrNull() { it.equals(codigoCurso) }
+        if (curso != null) {
+            cursos.remove(curso)
+            println("Curso deletado com sucesso")
+            return true
+        }
+        println("Curso nao localizado")
+        return false
     }
 
     fun registrarProfessorAdjunto(nome: String, sobrenome: String, codigoProfessor: Int, quantidadeDeHoras: Int) {
@@ -22,8 +29,15 @@ class DigitalHouseManager {
         professores.add(ProfessorTitular(codigoProfessor, nome, sobrenome, especialidade))
     }
 
-    fun excluirProfessor(codigoProfessor: Int) {
-        professores.remove(codigoProfessor)
+    fun excluirProfessor(codigoProfessor: Int): Boolean {
+        val professor = professores.firstOrNull() { it.equals(codigoProfessor) }
+        if (professor != null) {
+            professores.remove(professor)
+            println("Professor deletado com sucesso")
+            return true
+        }
+        println("Professor nao localizado")
+        return false
     }
 
     fun matricularAluno(nome: String, sobrenome: String, codigoAluno: Int) {
